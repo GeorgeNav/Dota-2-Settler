@@ -37,14 +37,14 @@ data = {
 
 img = {
     'chat_mute': {
-        'on': os.path.join(execution_path, f'./assets/images/chat_mute_on_{res}.png'),
-        'off': os.path.join(execution_path, f'./assets/images/chat_mute_off_{res}.png'),
+        'on': os.path.join(execution_path, f'./assets/scoreboard/icons/chat_mute_on_{res}.png'),
+        'off': os.path.join(execution_path, f'./assets/scoreboard/icons/chat_mute_off_{res}.png'),
     },
     'voice_mute': {
-        'on': os.path.join(execution_path, f'./assets/images/voice_mute_on_{res}.png'),
-        'off': os.path.join(execution_path, f'./assets/images/voice_mute_off_{res}.png'),
+        'on': os.path.join(execution_path, f'./assets/scoreboard/icons/images/voice_mute_on_{res}.png'),
+        'off': os.path.join(execution_path, f'./assets/scoreboard/icons/voice_mute_off_{res}.png'),
     },
-    'profile_pic': os.path.join(execution_path, f'./assets/images/profile_pic_{res}.png'),
+    'profile_pic': os.path.join(execution_path, f'./assets/profile/profile_pic_{res}.png'),
 }
 
 
