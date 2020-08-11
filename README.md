@@ -10,3 +10,6 @@ mute/unmute enemy: ; '
 pynput
 pyautogui
 opencv-python
+
+to install, simple run this command (assuming you have python3 installed)
+```pip3 install pynput pyautogui opencv-python```
