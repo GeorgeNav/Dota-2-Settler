@@ -2,9 +2,15 @@
 Modify dota 2's settings with hotkeys
 
 # Intial Release Hotkeys
-mute/unmute team: - =
-mute/unmute enemy: [ ]
-mute/unmute enemy: ; '
+Team
+  Mute: ```-```
+  Unmute: ```=```
+Enemy
+  Mute: ```[```
+  Unmute: ```]```
+Everyone
+  Mute: ```;```
+  Unmute: ```'```
 
 # Dependencies
 pynput
