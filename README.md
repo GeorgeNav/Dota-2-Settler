@@ -22,8 +22,8 @@ to install all the dependencies, simply run this command (assuming you have pyth
 ```pip3 install pynput pyautogui opencv-python```
 
 # Setting up for Team and Enemy related functionality
-* in the directory assets/images there are 2 profile_pic files that you have the choice of editing depending on your resolution. 1k for 1920x1080, 2k for 2560x1440.
-* clip your profile picture while in a game in the scoreboard (without anything outside the profile picture) and save that to the chosen picture file based off resolution.
+* In the directory assets/images there are 2 profile_pic files that you have the choice of editing depending on your resolution. 1k for 1920x1080, 2k for 2560x1440.
+* Clip your profile picture (win + shift + s) while in a bot game from the scoreboard (without anything outside the profile picture) and save that to the chosen picture file based off resolution.
 
 # Ways to run the script
   1. install vscode, open the dota_2_settler.py file, and press the play button on the top right
