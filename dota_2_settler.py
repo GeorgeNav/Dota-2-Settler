@@ -47,8 +47,18 @@ img = {
     'profile_pic': os.path.join(execution_path, f'./assets/images/profile_pic_{res}.png'),
 }
 
+
 sb_btn_data = data[res]['scoreboard']['btn']
-duration = 0
+
+
+def move_to_scoreboard():
+    pyautogui.moveTo(x=sb_btn_data[0], y=sb_btn_data[1])
+
+
+def click_scoreboard():
+    pyautogui.moveTo(x=sb_btn_data[0], y=sb_btn_data[1])
+    pyautogui.mouseDown(x=sb_btn_data[0], y=sb_btn_data[1])
+    pyautogui.mouseUp(x=sb_btn_data[0], y=sb_btn_data[1])
 
 
 def get_box_center(box):
@@ -70,8 +80,6 @@ def click_btns(btns, domain=None):
             pyautogui.mouseDown(x=x, y=y)
             pyautogui.mouseUp(x=x, y=y)
     else:
-        minXY = domain[0]
-        maxXY = domain[1]
         for btn in btns:
             (x, y) = get_box_center(btn)
             if(center_in_domain((x, y), domain)):
@@ -84,7 +92,7 @@ def mute(domain=None):
     needle = img['voice_mute']['off']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     allBtns = pyautogui.locateAll(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(allBtns):
         voice_mute_btns = list(allBtns)
         click_btns(voice_mute_btns, domain)
@@ -96,23 +104,20 @@ def mute(domain=None):
     needle = img['chat_mute']['off']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     allBtns = pyautogui.locateAll(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(allBtns):
         chat_mute_btns = list(allBtns)
         click_btns(chat_mute_btns, domain)
     else:
         print('Chat Mute Off Button Pic Invalid')
-
-    pyautogui.moveTo(x=sb_btn_data[0], y=sb_btn_data[1])
-    pyautogui.mouseDown(x=sb_btn_data[0], y=sb_btn_data[1])
-    pyautogui.mouseUp(x=sb_btn_data[0], y=sb_btn_data[1])
+    click_scoreboard()
 
 
 def unmute(domain=None):
     needle = img['voice_mute']['on']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     allBtns = pyautogui.locateAll(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(allBtns):
         voice_unmute_btns = list(allBtns)
         click_btns(voice_unmute_btns, domain)
@@ -124,34 +129,31 @@ def unmute(domain=None):
     needle = img['chat_mute']['on']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     allBtns = pyautogui.locateAll(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(allBtns):
         chat_unmute_btns = list(allBtns)
         click_btns(chat_unmute_btns, domain)
     else:
         print('Chat Mute On Button Pic Invalid')
-
-    pyautogui.moveTo(x=sb_btn_data[0], y=sb_btn_data[1])
-    pyautogui.mouseDown(x=sb_btn_data[0], y=sb_btn_data[1])
-    pyautogui.mouseUp(x=sb_btn_data[0], y=sb_btn_data[1])
+    click_scoreboard()
 
 
 def mute_everyone():
-    pyautogui.click(sb_btn_data[0], sb_btn_data[1])
+    click_scoreboard()
     mute()
 
 
 def unmute_everyone():
-    pyautogui.click(sb_btn_data[0], sb_btn_data[1])
+    click_scoreboard()
     unmute()
 
 
 def mute_team():
-    pyautogui.click(sb_btn_data[0], sb_btn_data[1])
+    click_scoreboard()
     needle = img['profile_pic']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     profile_pic = pyautogui.locate(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(profile_pic is not None):
         coord = get_box_center(profile_pic)
 
@@ -163,14 +165,15 @@ def mute_team():
         mute(side)
     else:
         print('Profile Pic Invalid')
+        click_scoreboard()
 
 
 def unmute_team():
-    pyautogui.click(sb_btn_data[0], sb_btn_data[1])
+    click_scoreboard()
     needle = img['profile_pic']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     profile_pic = pyautogui.locate(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(profile_pic is not None):
         coord = get_box_center(profile_pic)
 
@@ -182,14 +185,15 @@ def unmute_team():
         unmute(side)
     else:
         print('Profile Pic Invalid')
+        click_scoreboard()
 
 
 def mute_enemy():
-    pyautogui.click(sb_btn_data[0], sb_btn_data[1])
+    click_scoreboard()
     needle = img['profile_pic']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     profile_pic = pyautogui.locate(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(profile_pic is not None):
         coord = get_box_center(profile_pic)
 
@@ -201,14 +205,15 @@ def mute_enemy():
         mute(side)
     else:
         print('Profile Pic Invalid')
+        click_scoreboard()
 
 
 def unmute_enemy():
-    pyautogui.click(sb_btn_data[0], sb_btn_data[1])
+    click_scoreboard()
     needle = img['profile_pic']
     haystack = pyautogui.screenshot().crop(data[res]['scoreboard']['box'])
     profile_pic = pyautogui.locate(
-        needle, haystack, grayscale=True, confidence=0.9)
+        needle, haystack)
     if(profile_pic is not None):
         coord = get_box_center(profile_pic)
 
@@ -220,6 +225,7 @@ def unmute_enemy():
         unmute(side)
     else:
         print('Profile Pic Invalid')
+        click_scoreboard()
 
 
 with keyboard.GlobalHotKeys({
