@@ -1,5 +1,9 @@
 # Dota-2-Settler
-Modify dota 2's settings with hotkeys
+Modify dota 2's settings with hotkeys.
+
+# Supported resolutions
+  * 1920 x 1080
+  * 2560 x 1440
 
 # Intial Release Hotkeys
 * Team Mute: ```-```
@@ -16,3 +20,8 @@ Modify dota 2's settings with hotkeys
 
 to install, simple run this command (assuming you have python3 installed)
 ```pip3 install pynput pyautogui opencv-python```
+
+# Setting up profile picture
+* in the directory assets/images there are 2 files that you have the choice of editing depending on your resolution. 1k for 1920x1080, 2k for 2560x1440.
+* clip your profile picture while in a game in the scoreboard and save that to the picture file.
+* To run the program install vscode, open the dota_2_settler.py file and press the play button on the top right or simple enter ```python3 dota_2_settler.py``` in your terminal of choice
